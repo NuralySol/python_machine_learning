@@ -138,5 +138,32 @@ print(filtered_df)
 # 5.	Filtering Data: We filtered the DataFrame to include only rows where Age > 30.
 
 
+data = {
+    'A': [10, 200, 30],
+    'B': [40, 50, 50],
+    'C': [70, 80, 90],
+}
 
+df = pd.DataFrame(data)
+
+idx = df['A'].idxmax()
+
+largest_value_row = df.loc[idx]
+print("Row with the largest value in column 'A':")
+print(largest_value_row)
+
+
+# 1.	Creating the DataFrame:
+# 	•	A dictionary data is created with three columns: 'A', 'B', and 'C'.
+# 	•	The values in column 'A' are [10, 200, 30], in column 'B' are [40, 50, 50], and in column 'C' are [70, 80, 90].
+# 	•	The pandas.DataFrame() function is used to convert this dictionary into a pandas DataFrame called df.
+# 	2.	Finding the Maximum Value in Column ‘A’:
+# 	•	The idxmax() function is used on column 'A' to find the index of the maximum value. This function returns the index (row number) where the maximum value in the specified column is located. In this case, the maximum value in column 'A' is 200, and its index is 1 (second row).
+# 	3.	Extracting the Row with the Largest Value:
+# 	•	Using .loc[], the row at index 1 is accessed. This method retrieves the row from the DataFrame where the maximum value in column 'A' is located.
+# 	4.	Printing the Result:
+# 	•	The row containing the largest value in column 'A' is printed. In this case, the second row (index 1) is displayed, which contains:
+# 	•	A: 200
+# 	•	B: 50
+# 	•	C: 80
 
