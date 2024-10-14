@@ -73,7 +73,6 @@ print(
 )  # The original array remains unchanged
 
 
-
 # •	Basic operations like checking shape, size, and type of the array.
 # •	Indexing and slicing to access specific elements or rows/columns.
 # •	Mathematical operations like addition, subtraction, multiplication, and division.

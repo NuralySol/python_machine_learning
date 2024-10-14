@@ -11,7 +11,7 @@ df["Price"] = [550000, 565000, 610000, 680000, 725000]
 print(df)
 
 # Plotting the data
-plt.scatter(df["Area"], df["Price"], color='blue')
+plt.scatter(df["Area"], df["Price"], color="blue")
 plt.xlabel("Area of the House (sq ft)")
 plt.ylabel("Price of the House (USD)")
 plt.title("House Price vs Area")
@@ -39,18 +39,32 @@ print(f"Intercept: {intercept}")
 predicted_prices = model.predict(X)
 
 # Plot the regression line along with the data points
-plt.scatter(df["Area"], df["Price"], color='blue')  # Original data points
-plt.plot(df["Area"], predicted_prices, color='red', linewidth=2)  # Regression line
+plt.scatter(df["Area"], df["Price"], color="blue")  # Original data points
+plt.plot(df["Area"], predicted_prices, color="red", linewidth=2)  # Regression line
 
 # Plot the predicted prices with green stars
-plt.scatter(df["Area"], predicted_prices, color='green', marker='*', s=100, label='Predicted Prices')
+plt.scatter(
+    df["Area"],
+    predicted_prices,
+    color="green",
+    marker="*",
+    s=100,
+    label="Predicted Prices",
+)
 
 # Predict the price for a house with an area of 5000 sq ft
 predicted_price_5000 = model.predict([[5000]])  # 2D array required for prediction
 print(f"Predicted price for a house with 5000 sq ft area: {predicted_price_5000[0]}")
 
 # Plot the 5000 sq ft prediction with an orange star
-plt.scatter([5000], predicted_price_5000, color='orange', marker='*', s=200, label='Predicted Price (5000 sq ft)')
+plt.scatter(
+    [5000],
+    predicted_price_5000,
+    color="orange",
+    marker="*",
+    s=200,
+    label="Predicted Price (5000 sq ft)",
+)
 
 # Add labels and title
 plt.xlabel("Area of the House (sq ft)")

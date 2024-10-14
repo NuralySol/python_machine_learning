@@ -42,7 +42,9 @@ else:
     print("The required columns ('Symbol' and 'Last') do not exist in the DataFrame.")
 
 # Ensure 'Volume' column is numeric by removing non-numeric characters ('M' for millions, commas)
-df["Volume"] = pd.to_numeric(df["Volume"].str.replace("M", "").str.replace(",", ""), errors="coerce")
+df["Volume"] = pd.to_numeric(
+    df["Volume"].str.replace("M", "").str.replace(",", ""), errors="coerce"
+)
 
 # Calculate and print total volume
 total_volume = df["Volume"].sum()
@@ -79,7 +81,9 @@ print(f"Last price of the company with symbol 'C' (using .loc()): {last_price_C_
 
 # Using .query() method
 last_price_C_query = df.query('Symbol == "C"')["Last"].values[0]
-print(f"Last price of the company with symbol 'C' (using .query()): {last_price_C_query}")
+print(
+    f"Last price of the company with symbol 'C' (using .query()): {last_price_C_query}"
+)
 
 # Sort by highest volume and display top 5 companies with the largest volume
 df_sorted_by_volume = df.sort_values(by="Volume", ascending=False)
